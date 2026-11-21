@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b14">
+  <meta name="description" content="Periksa tujuan akhir tautan pendek sebelum membukanya.">
+  <title>LinkScope — Periksa tujuan tautan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">↗</span> LinkScope</a>
+    <span class="tag">BETA</span>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow"><span></span> LINK CHECKER</div>
+      <h1>Lihat ke mana<br><em>tautanmu menuju.</em></h1>
+      <p class="intro">Tempel tautan pendek untuk memeriksa rantai pengalihannya dan melihat alamat tujuan akhir sebelum dibuka.</p>
+
+      <form id="form" class="search">
+        <label class="sr-only" for="url">Masukkan tautan</label>
+        <span class="link-symbol">⌁</span>
+        <input id="url" type="url" placeholder="https://bit.ly/contoh" autocomplete="url" required>
+        <button id="submit" type="submit"><span>Periksa link</span><b>→</b></button>
+      </form>
+      <p class="hint">Gunakan tautan http:// atau https:// yang bisa diakses publik.</p>
+      <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+      <section id="result" class="result" hidden>
+        <div class="result-head">
+          <div><div class="result-kicker">TUJUAN AKHIR</div><h2>Hasil pemeriksaan</h2></div>
+          <span class="success-mark">✓</span>
+        </div>
+        <a id="final-url" class="final-url" target="_blank" rel="noopener noreferrer"></a>
+        <div class="result-meta" id="meta"></div>
+        <div class="chain-title">RANTAI PENGALIHAN</div>
+        <ol id="chain" class="chain"></ol>
+        <div class="result-actions">
+          <button id="copy" class="secondary" type="button">Salin tujuan</button>
+          <a id="open" class="primary" target="_blank" rel="noopener noreferrer">Buka tujuan ↗</a>
+        </div>
+        <p id="note" class="note" hidden></p>
+      </section>
+    </section>
+
+    <section class="info-grid">
+      <article class="info-card"><div class="info-icon">◎</div><h3>Periksa redirect</h3><p>Melacak pengalihan HTTP yang dapat diakses server.</p></article>
+      <article class="info-card"><div class="info-icon">⌁</div><h3>Lebih transparan</h3><p>Tampilkan rantai URL agar tujuan tautan lebih mudah diperiksa.</p></article>
+      <article class="info-card"><div class="info-icon">◇</div><h3>Utamakan keamanan</h3><p>Alamat lokal dan jaringan privat ditolak oleh backend.</p></article>
+    </section>
+    <p class="disclaimer">Tidak dapat melewati CAPTCHA, login, pembayaran, timer, atau langkah yang memerlukan interaksi manusia. Selalu periksa domain tujuan sebelum membukanya.</p>
+  </main>
+  <footer>LinkScope <span>•</span> Periksa dahulu, buka kemudian.</footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
